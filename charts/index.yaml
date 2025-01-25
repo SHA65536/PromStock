@@ -9,6 +9,6 @@ entries:
     name: promstock
     type: application
     urls:
-    - https://sha65536.github.io/promstock/promstock-0.1.0.tgz
+    - https://sha65536.github.io/promstock/charts/promstock-0.1.0.tgz
     version: 0.1.0
 generated: "2025-01-25T11:06:22.147789894+02:00"
