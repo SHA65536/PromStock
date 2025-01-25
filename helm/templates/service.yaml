@@ -1,0 +1,18 @@
+{{- if .Values.service.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.promstock.port }}
+      targetPort: {{ .Values.promstock.port }}
+      protocol: TCP
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+{{- end -}}

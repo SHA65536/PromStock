@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+data:
+  API_KEY: "{{ .Values.promstock.apiKey }}"
+  STOCKS: '{{ .Values.promstock.stocks | join ","}}'
+  INTERVAL: "{{ .Values.promstock.interval }}"
+  METRICS_PORT: "{{ .Values.promstock.port }}"
