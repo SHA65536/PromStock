@@ -3,12 +3,12 @@ entries:
   promstock:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-01-25T10:53:38.254682619+02:00"
+    created: "2025-01-25T11:06:22.148032129+02:00"
     description: A Helm chart to deploy promstock
     digest: ef0259d75bfbe17c64e762d314025410a13d92c8dead976df1406b919ed8a86c
     name: promstock
     type: application
     urls:
-    - https://sha2048.github.io/promstock/promstock-0.1.0.tgz
+    - https://sha65536.github.io/promstock/promstock-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-25T10:53:38.254453377+02:00"
+generated: "2025-01-25T11:06:22.147789894+02:00"
