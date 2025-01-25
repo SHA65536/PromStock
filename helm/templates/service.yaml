@@ -9,7 +9,8 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.promstock.port }}
+    - name: metrics
+      port: {{ .Values.promstock.port }}
       targetPort: {{ .Values.promstock.port }}
       protocol: TCP
   selector:
