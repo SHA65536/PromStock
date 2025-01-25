@@ -12,6 +12,9 @@ spec:
     - name: metrics
       port: {{ .Values.promstock.port }}
       targetPort: {{ .Values.promstock.port }}
+      {{- if .Values.service.nodeport }}
+      nodePort: {{ .Values.service.nodeport }}
+      {{- end }}
       protocol: TCP
   selector:
     app: {{ .Chart.Name }}
