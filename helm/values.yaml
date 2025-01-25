@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: sha2048/promstock
+  tag: 0.0.2
+  pullPolicy: IfNotPresent
+
+service:
+  enabled: true
+  type: ClusterIP
+
+promstock:
+  apiKey: ""
+  stocks: []
+  interval: 60
+  port: 8080
+
+serviceMonitor:
+  enabled: false
+  namespace: ""
+  interval: 60s
+  scrapeTimeout: 10s
+  labels: {}
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
