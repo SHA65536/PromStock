@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/collectors"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/sha65536/promstock/stock"
 	"github.com/urfave/cli/v2"
@@ -24,6 +25,8 @@ var stockPriceGauge = prometheus.NewGaugeVec(
 
 func main() {
 	prometheus.MustRegister(stockPriceGauge)
+	prometheus.Unregister(collectors.NewGoCollector())
+	prometheus.Unregister(collectors.NewProcessCollector(collectors.ProcessCollectorOpts{}))
 
 	app := &cli.App{
 		Name:  "PromStock",
